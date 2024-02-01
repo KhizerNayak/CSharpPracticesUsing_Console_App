@@ -1,4 +1,8 @@
-﻿namespace LearningcSharpOOP
+﻿using System.ComponentModel.DataAnnotations;
+using System.Net.Http.Headers;
+using System.Security.Cryptography.X509Certificates;
+
+namespace LearningcSharpOOP
 {
     internal class Loops
     {
@@ -10,14 +14,16 @@
         {
 
             
-            Console.WriteLine("Enter which type you want if u want to print * then press 1 and if you want to print no in hw format then print for \n hw:A \"2\" \n hw:B \"3\" \n hw:C \"4\"   \n hw:D \"5\" ");
+            Console.WriteLine("Enter which type you want if u want to print * then press 1 and if you want to print no in hw format then print for \n hw:A \"2\" \n hw:B \"3\" \n hw:C \"4\"   \n hw:Pallindrome \"5\" ");
 
             Console.WriteLine("Enter the Loop function u want");
            
 
             Console.WriteLine("Enter the No");
+
             obj.num = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("---------------------------");
+
             if(obj.num > 0 || obj.num <=4) 
             {
                 switch (obj.num)
@@ -34,7 +40,9 @@
                     case 4:
                         No124(); //hw:d
                         break;
-                    
+                    case 5:
+                        Pallin();
+                        break;
                 }
             }
             else
@@ -127,6 +135,33 @@
                 Console.WriteLine();
             }
 
+        }
+        private void Pallin()
+        {
+            string P = Console.ReadLine();
+            int start = 0;
+            int End = P.Length - 1;
+            bool isPalindrome = true; // Assume palindrome initially
+
+            while (start < End)
+            {
+                if (P[start] != P[End])
+                {
+                    isPalindrome = false;
+                }
+                start++;
+                End--;
+
+                
+            }
+            if (isPalindrome = true)
+            {
+                Console.WriteLine("This is Pallindrome");
+            }
+            else
+            {
+                Console.WriteLine("This is not pallindrome");
+            }
         }
         
     }
